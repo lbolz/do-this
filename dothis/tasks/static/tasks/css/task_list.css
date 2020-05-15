@@ -1,0 +1,6 @@
+table, tr, th, td {
+  border: 1px solid;
+  border-style: solid dotted;
+  width: 100%;
+  table-layout: fixed;
+}

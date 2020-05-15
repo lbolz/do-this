@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+<title>Do This | {% block title %}{% endblock %}</title>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'tasks/css/base.css' %}">
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="{% url "task_list" %}">Tasks</a>
+        <a href="{% url "calendar" %}">Calendar</a>
+    </div>
+
+    <div class="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
