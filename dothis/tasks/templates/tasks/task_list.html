@@ -21,24 +21,33 @@
 
 <table>
   {% for task in task_list %}
-  <tr><p>i</p>
-  </tr>	
-  <tr>
-    <td class="left-column" rowspan="2">
-      {{ task.date }}
-      <br>
-      {{ task.get_status_display }}
-    </td>
-    <td class="right-column">
-      {{ task.title }}
-      <br>    
-    </td>
-  </tr>	
-  <tr>
-    <td>{{ task.notes }}</td>
+  
+  <tr> 
+    <button onClick="tableDropDown()">x</button> {{ task.title }}
   </tr>
+
+  <div id="row-task-detail">	
+  <tr>
+      <td class="left-column" rowspan="2">
+        {{ task.date }}
+        <br>
+        {{ task.get_status_display }}
+      </td>
+      <td class="right-column">
+        {{ task.title }}
+        <br>    
+      </td>
+    </tr>	
+    
+    <tr>
+      <td>{{ task.notes }}</td>
+  </tr>
+  </div>
+
   {% endfor %}
 </table>
+
+<script src="{% static 'tasks/js/task_list.js' %}"></script>
 
 </body>
 
