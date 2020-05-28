@@ -1,34 +1,45 @@
+<!DOCTYPE html>
+
 {% extends "base.html" %}
 {% load static %}
+
 {% block title %}
   Task List
 {% endblock %}
 
 {% block content %}
+
 <head>
-  <link rel="stylesheet" type="text/css" href="{% static 'tasks/css/task_list.css' %}"> 
+
+<link rel="stylesheet" type="text/css" href="{% static 'tasks/css/task_list.css' %}"> 
+
 </head>
 
 <body>
-  <h1>Task List</h1>
 
-  <table>
-	  <tr>
-		<th>Due Date</th>
-		<th>Task</th>
-		<th>Status</th>
-	  </tr>
-    {% for task in task_list %}	
-	  <tr>
-		<td>{{ task.date }}</td>
-		<td>{{ task.title }}</td>
-		<td>{{ task.get_status_display }}</td>
-	  </tr>
-	
-	  <tr>
-		<td colspan="3">{{ task.notes }}</td>
-	  </tr>
-    {% endfor %}
-  </table>
+<h1>Task List</h1>
+
+<table>
+  {% for task in task_list %}
+  <tr><p>i</p>
+  </tr>	
+  <tr>
+    <td class="left-column" rowspan="2">
+      {{ task.date }}
+      <br>
+      {{ task.get_status_display }}
+    </td>
+    <td class="right-column">
+      {{ task.title }}
+      <br>    
+    </td>
+  </tr>	
+  <tr>
+    <td>{{ task.notes }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
 </body>
+
 {% endblock %}
