@@ -10,43 +10,56 @@
 {% block content %}
 
 <head>
-
+<h1>Task List</h1>
 <link rel="stylesheet" type="text/css" href="{% static 'tasks/css/task_list.css' %}"> 
-
 </head>
 
 <body>
+{% for task in task_list %}
+<section>
+<div id="task-head" onClick="tableDropDown()">
+  <div>
+    <h2>{{ task.title}} </h2>
+  <div>
+</div>
+<div id="task-body">
+  <div class="left-column">
+    <p>{{ task.date }}</p>
+    <p>{{ task.get_status_display }}</p>
+  </div>
+  <div class="right-column">
+    <p>{{ task.title }}</p>
+    <p>{{ task.notes }}</p>
+  </div>
+</div>
+</section>
+{% endfor %}
 
-<h1>Task List</h1>
-
-<table>
+<!-- <table>
   {% for task in task_list %}
-  
-  <tr> 
-    <button onClick="tableDropDown()">x</button> {{ task.title }}
-  </tr>
-
-  <div id="row-task-detail">	
   <tr>
-      <td class="left-column" rowspan="2">
-        {{ task.date }}
-        <br>
-        {{ task.get_status_display }}
-      </td>
-      <td class="right-column">
-        {{ task.title }}
-        <br>    
-      </td>
-    </tr>	
-    
-    <tr>
-      <td>{{ task.notes }}</td>
+    <td onClick="tableDropDown()">
+      {{ task.title }}
+    </td>
+  </tr>
+  <div id="row-task-detail">
+  <tr>
+    <td class="left-column" rowspan="2">
+      {{ task.date }}
+      <br>
+      {{ task.get_status_display }}
+    </td>
+    <td class="right-column">
+      {{ task.title }}
+    </td>
+  </tr>	 
+  <tr>
+    <td>{{ task.notes }}</td>
   </tr>
   </div>
-
   {% endfor %}
 </table>
-
+-->
 <script src="{% static 'tasks/js/task_list.js' %}"></script>
 
 </body>

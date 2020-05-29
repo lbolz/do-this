@@ -1,17 +1,13 @@
-table, tr, th, td {
-  border: 1px solid;
-  border-style: solid dotted;
-  border-collapse: collapse;
-  width: 100%;
-  table-layout: auto;
-  padding: none;
+#task-body {
+  display: none;
 }
 
-/* Modifies the table of tasks */
-.left-column { 
-  width:30%;
+.left-column {
+  float: left;
+  width: 30%;
 }
 
 .right-column {
-  width:70%;  
+  float: left;
+  width: 70%;
 }

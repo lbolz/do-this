@@ -1,8 +1,8 @@
 function tableDropDown() {
-  var row = document.getElementById("row-task-detail");
-  if (row.style.display === "none") {
-    row.style.display = "block";
+  var body = document.getElementById("task-body");
+  if (body.style.display == "none") {
+    body.style.display = "block";
   } else {
-    row.style.display = "none";
+    body.style.display = "none";
   }
 }
