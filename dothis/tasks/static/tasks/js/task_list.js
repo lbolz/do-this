@@ -1,6 +1,6 @@
-function tableDropDown() {
-  var body = document.getElementById("task-body");
-  if (body.style.display == "none") {
+function bodyDropDown() {
+  var body = document.getElementsByClassName("task-body");
+  if (body.style.display[0] == "none") {
     body.style.display = "block";
   } else {
     body.style.display = "none";
