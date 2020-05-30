@@ -1,5 +1,9 @@
-body {
+h1, a {
   font-family: 'Alata', 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Open Sans', 'Roboto', sans-serif;
 }
 
 .sidenav {
