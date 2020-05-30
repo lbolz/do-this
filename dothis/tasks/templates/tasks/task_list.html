@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 
 {% extends "base.html" %}
+
 {% load static %}
 
 {% block title %}Task List{% endblock %}
 
 {% block content %}
-
 <head>
-<h1>Task List</h1>
-<link rel="stylesheet" type="text/css" href="{% static 'tasks/css/task_list.css' %}"> 
+  <link rel="stylesheet" type="text/css" href="{% static 'tasks/css/task_list.css' %}"> 
+  <h1>Task List</h1>
 </head>
 
 <body>
-{% for task in task_list %}
-<section>
-<div class="task-head" onClick="bodyDropDown()">
-  <div>
-    <h2>{{ task.title }}</h2>
-  </div>
-</div>
-<div class="task-body">
-  <div class="left-column">
-    <p>{{ task.date }}</p>
-    <p>{{ task.get_status_display }}</p>
-  </div>
-  <div class="right-column">
-    <p>{{ task.title }}</p>
-    <p>{{ task.notes }}</p>
-  </div>
-</div>
-</section>
-{% endfor %}
-<script src="{% static 'tasks/js/task_list.js' %}"></script>
+  {% for task in task_list %}
+  <section>
+    <div class="task-head" onClick="bodyDropDown()">
+      <div>
+        <h2>{{ task.title }}</h2>
+      </div>
+    </div>
+    <div class="task-body">
+      <div class="left-column">
+        <p>{{ task.date }}</p>
+        <p>{{ task.get_status_display }}</p>
+      </div>
+      <div class="right-column">
+        <p>{{ task.title }}</p>
+        <p>{{ task.notes }}</p>
+      </div>
+    </div>
+  </section>
+  {% endfor %}
 </body>
+
+<script src="{% static 'tasks/js/task_list.js' %}"></script>
 
 {% endblock %}

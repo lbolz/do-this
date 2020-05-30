@@ -1,20 +1,22 @@
+<!DOCTYPE html>
+
 {% load static %}
-<html>
-<title>Do This | {% block title %}{% endblock %}</title>
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% static 'tasks/css/base.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="{% static 'tasks/css/base.css' %}">
+  <title>Do This | {% block title %}{% endblock %}</title>
 </head>
 
 <body>
-    <div class="sidenav">
-        <a href="{% url "task_list" %}">Tasks</a>
-        <a href="{% url "calendar" %}">Calendar</a>
-    </div>
+  <div class="sidenav">
+    <a href="{% url "task_list" %}">Tasks</a>
+    <a href="{% url "calendar" %}">Calendar</a>
+  </div>
 
-    <div class="main">
-        {% block content %}
-        {% endblock %}
-    </div>
+  <div class="main">
+    {% block content %}
+    {% endblock %}
+  </div>
 </body>
-</html>
