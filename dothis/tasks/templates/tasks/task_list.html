@@ -14,23 +14,19 @@
 
 <body>
   {% for task in task_list %}
-  <section>
-    <div class="task-head" onClick="bodyDropDown()">
-      <div>
-        <h2>{{ task.title }}</h2>
-      </div>
-    </div>
-    <div class="task-body">
-      <div class="left-column">
-        <p>{{ task.date }}</p>
-        <p>{{ task.get_status_display }}</p>
-      </div>
-      <div class="right-column">
-        <p>{{ task.title }}</p>
-        <p>{{ task.notes }}</p>
-      </div>
-    </div>
+  <section class="task">
+	<div class="left-box">
+	  <p>{{ task.get_status_display }}</p>
+	</div>
+	<div class="center-box">
+	  <p>{{ task.date }}</p>
+	</div>
+	<div class="right-box">
+	  <p>{{ task.title }}</p>
+	  <p>{{ task.notes }}</p>
+	</div>
   </section>
+    <br>
   {% endfor %}
 </body>
 
